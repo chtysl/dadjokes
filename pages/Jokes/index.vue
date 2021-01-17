@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SearchJokes @search-text="searchText" />
     <Joke
       v-for="joke in jokes"
       :key="joke.id"
@@ -12,9 +13,12 @@
 <script>
 import axios from "axios";
 import Joke from "@/components/Joke";
+import SearchJokes from "@/components/SearchJokes";
+
 export default {
   components: {
     Joke,
+    SearchJokes,
   },
   data() {
     return {
